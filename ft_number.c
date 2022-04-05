@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 20:17:52 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/05 02:58:46 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/05 12:12:30 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,10 @@ int	ft_putnbr_base(va_list arg, size_t base, char mode)
 		len += 2;
 		write(1, "0x", 2);
 	}
-	else if (mode == 'u')
-		n = (unsigned int)n;
-	else if (mode == 'x' || mode == 'X')
-	{
-		// n = (long)n;
-		if (mode == 'X')
-			p_mode = 1;
-	}
+	// else if (mode == 'u')
+	n = (unsigned int)n;
+	if (mode == 'X')
+		p_mode = 1;
 	len += recur_base(n, base, 0, p_mode);
 	return (len);
 }
