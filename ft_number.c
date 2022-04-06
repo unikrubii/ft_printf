@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 20:17:52 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/05 12:21:10 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/06 16:00:54 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,35 @@ int	recur_base(size_t n, size_t base, int len, int p_mode)
 	return (len + 1);
 }
 
+int	ft_nbr_sharp(va_list arg, size_t base, char mode)
+{
+	unsigned int	n;
+	int				len;
+	int				p_mode;
+
+	len = 0;
+	p_mode = 0;
+	n = (unsigned int)va_arg(arg, unsigned int);
+	if (n == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	if (mode == 's')
+	{
+		write(1, "0x", 2);
+		len += 2;
+	}
+	else if (mode == 'S')
+	{
+		write(1, "0X", 2);
+		len += 2;
+		p_mode = 1;
+	}
+	len += recur_base(n, base, 0, p_mode);
+	return (len);
+}
+
 int	ft_putnbr_base(va_list arg, size_t base, char mode)
 {
 	ssize_t	n;
@@ -40,47 +69,13 @@ int	ft_putnbr_base(va_list arg, size_t base, char mode)
 	n = (ssize_t)va_arg(arg, ssize_t);
 	if (mode == 'p')
 	{
-		len += 2;
 		write(1, "0x", 2);
+		len += 2;
 	}
 	else
-	{
 		n = (unsigned int)n;
-		if (mode == 'X')
-			p_mode = 1;
-	}
+	if (mode == 'X')
+		p_mode = 1;
 	len += recur_base(n, base, 0, p_mode);
-	return (len);
-}
-
-int	ft_putnbr(int n, int len)
-{
-	char	c;
-
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return (11);
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-		len++;
-	}
-	if (n >= 10)
-		len = ft_putnbr(n / 10, len);
-	c = n % 10 + '0';
-	write(1, &c, 1);
-	return (len + 1);
-}
-
-int	ft_put_di(va_list arg)
-{
-	int	len;
-	long	n;
-
-	n = (int)va_arg(arg, int);
-	len = ft_putnbr(n, 0);
 	return (len);
 }
