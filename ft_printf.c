@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 18:03:54 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/06 21:04:46 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:18:28 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_nbr_sharp(va_list arg, size_t base, char mode);
 int	ft_isdigit(const char c);
 int	ft_atoi(const char *str);
 
-int p_flags_b2(const char **fmt)
+int p_flags_b2(char **fmt)
 {
 	int	len;
 	int	space;
@@ -36,7 +36,7 @@ int p_flags_b2(const char **fmt)
 	return (len);
 }
 
-int p_flags_b1(va_list arg, const char *fmt)
+int p_flags_b1(va_list arg, char *fmt)
 {
 	int		len;
 	char	mode;
@@ -63,7 +63,7 @@ int p_flags_b1(va_list arg, const char *fmt)
 	return (len);
 }
 
-int	p_flags(va_list arg, const char *fmt)
+int	p_flags(va_list arg, char *fmt)
 {
 	int		len;
 
@@ -92,7 +92,7 @@ int	p_flags(va_list arg, const char *fmt)
 	return (len);
 }
 
-int	check_flags(va_list arg, const char *fmt)
+int	check_flags(va_list arg, char *fmt)
 {
 	int		len;
 
