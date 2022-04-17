@@ -6,18 +6,18 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 01:42:01 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/06 20:23:40 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:22:06 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_isdigit(const char c)
+int	ft_isdigit(char c)
 {
 	return (c >= '0' && c <= '9');
 }
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(char *s)
 {
 	size_t	i;
 
@@ -27,7 +27,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
 	int	minus;
 	int	result;

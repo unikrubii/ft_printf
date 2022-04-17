@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/13 23:23:12 by sthitiku         ###   ########.fr       */
+/*   Created: 2022/04/18 01:01:47 by sthitiku          #+#    #+#             */
+/*   Updated: 2022/04/18 01:02:00 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <stdio.h>
-
-typedef struct s_f
+int	ft_putnbr(int n, int len)
 {
-	va_list	arg;
-	int		len;
-	int		flen;
-	int		stop;
-	char	*flag;
-}	t_f;
+	char	c;
 
-void	put_char(t_f *ar, char c);
-t_f		*init_s(t_f *ar);
-int		flag_len(char *fmt);
-
-#endif
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return (11);
+	}
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n *= -1;
+		len++;
+	}
+	if (n >= 10)
+		len = ft_putnbr(n / 10, len);
+	c = n % 10 + '0';
+	write(1, &c, 1);
+	return (len + 1);
+}

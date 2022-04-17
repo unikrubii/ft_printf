@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 18:03:54 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/07 16:18:28 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:21:34 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,11 +125,13 @@ int	check_flags(va_list arg, char *fmt)
 
 int	ft_printf(const char *fmt, ...)
 {
-	va_list		arg;
-	int			len;
+	va_list	arg;
+	int		len;
+	char	*format;
 
+	format = (char *)fmt;
 	va_start(arg, fmt);
-	len = check_flags(arg, fmt);
+	len = check_flags(arg, format);
 	va_end(arg);
 	// printf("\n==%d==\n", len);
 	return (len);
