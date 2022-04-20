@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/13 23:23:12 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/20 21:15:12 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,13 @@ typedef struct s_f
 	char	*flag;
 }	t_f;
 
-void	put_char(t_f *ar, char c);
 t_f		*init_s(t_f *ar);
 int		flag_len(char *fmt);
+void	put_nonf(t_f *ar, char c);
+void	ft_putnbr(int n, t_f *ar);
+void	ft_putchar(unsigned char c, t_f *ar);
+void	ft_putstr(unsigned char *str, t_f *ar);
+void	put_base(size_t n, t_f *ar, size_t base, char mode);
+void	recur_base(size_t n, t_f *ar, size_t base, char mode);
 
 #endif

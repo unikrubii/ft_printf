@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:18:53 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/17 21:59:30 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/20 18:00:19 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_f	*init_s(t_f *ar)
 	return (ar);
 }
 
-void	put_char(t_f *ar, char c)
+void	put_nonf(t_f *ar, char c)
 {
 	write(1, &c, 1);
 	ar->len++;
