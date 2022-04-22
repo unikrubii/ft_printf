@@ -6,11 +6,27 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:18:53 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/21 11:39:45 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/22 18:13:27 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_strlen(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
 
 t_f	*init_s(t_f *ar)
 {
@@ -26,7 +42,7 @@ void	put_nonf(t_f *ar, char c)
 	ar->flen = 1;
 }
 
-int		flag_len(char *fmt)
+int	flag_len(char *fmt)
 {
 	int	i;
 
@@ -42,4 +58,27 @@ int		flag_len(char *fmt)
 	}
 	i++;
 	return (i);
+}
+
+int	ft_atoi(char *s)
+{
+	int	minus;
+	int	res;
+
+	minus = 1;
+	res = 0;
+	while (*s == ' ')
+		s++;
+	if (*s == '-' || *s == '+')
+	{
+		if (*s == '-')
+			minus *= -1;
+		s++;
+	}
+	while (*s >= '0' && *s <= '9')
+	{
+		res = res * 10 + (*s - '0');
+		s++;
+	}
+	return (res * minus);
 }

@@ -6,14 +6,14 @@
 #    By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 13:16:49 by sthitiku          #+#    #+#              #
-#    Updated: 2022/04/21 11:25:55 by sthitiku         ###   ########.fr        #
+#    Updated: 2022/04/22 15:11:45 by sthitiku         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 # SRCS = ft_printf.c ft_alpha.c ft_number.c ft_numint.c libft.c
-SRCS = demo.c ft_printf_utils.c ft_print_int.c
+SRCS = demo.c ft_printf_utils.c ft_print_int.c ft_print_space.c ft_print_zero.c
 
 OBJS = $(SRCS:.c=.o)
 

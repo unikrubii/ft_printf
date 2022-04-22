@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 01:01:47 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/21 20:56:21 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/22 21:42:53 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ void	ft_putstr(unsigned char *str, t_f *ar)
 	}
 }
 
-void	ft_putnbr(int n, t_f *ar)
+void	ft_putnbr(long n, t_f *ar)
 {
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		ar->len += 11;
-		return ;
-	}
+	// if (n == -2147483648)
+	// {
+	// 	write(1, "-2147483648", 11);
+	// 	ar->len += 11;
+	// 	return ;
+	// }
 	if (n < 0)
 	{
 		ft_putchar('-', ar);
@@ -119,10 +119,4 @@ void	put_plus(int n, t_f *ar)
 		ar->len++;
 	}
 	ft_putnbr(n, ar);
-}
-
-void	put_space(char *flag, t_f *ar)
-{
-	// ("% s|% s", "", "-")
-	printf("\n||%s||\n", flag);
 }
