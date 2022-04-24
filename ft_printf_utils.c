@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:18:53 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/22 18:13:27 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/24 19:02:23 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ int	ft_strlen(char *s)
 {
 	int	i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	while (s[i])
 		i++;
 	return (i);
 }
-
 
 int	ft_isdigit(int c)
 {
@@ -35,19 +36,12 @@ t_f	*init_s(t_f *ar)
 	return (ar);
 }
 
-void	put_nonf(t_f *ar, char c)
-{
-	write(1, &c, 1);
-	ar->len++;
-	ar->flen = 1;
-}
-
 int	flag_len(char *fmt)
 {
 	int	i;
 
 	i = 1;
-	while(fmt[i])
+	while (fmt[i])
 	{
 		if (fmt[i] == 'c' || fmt[i] == 's' || fmt[i] == 'p' || \
 			fmt[i] == 'd' || fmt[i] == 'i' || fmt[i] == 'u' || \

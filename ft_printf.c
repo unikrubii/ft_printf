@@ -5,134 +5,127 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 18:03:54 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/18 01:57:48 by sthitiku         ###   ########.fr       */
+/*   Created: 2022/04/11 21:01:03 by sthitiku          #+#    #+#             */
+/*   Updated: 2022/04/24 19:04:51 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_di(va_list arg, char mode);
-int	ft_nbr_sharp(va_list arg, size_t base, char mode);
-int	ft_isdigit(const char c);
-int	ft_atoi(const char *str);
-
-int p_flags_b2(char **fmt)
+void	proc_bonus(char *flag, t_f *ar)
 {
-	int	len;
-	int	space;
+	int	i;
 
-	len = 0;
-	space = 0;
-	if (*fmt == ' ')
+	i = 0;
+	while (++i < ar->flen)
 	{
-		space = ft_atoi(fmt);
-		while (len < space)
+		if (flag[i] == '#')
+			put_sharp(flag, ar);
+		else if (flag[i] == '+')
+			put_plus(va_arg(ar->arg, int), ar);
+		else if (flag[i] == ' ')
 		{
-			write(1, " ", 1);
-			len++;
+			put_space(flag, ar, ' ');
+			return ;
+		}
+		else if (ft_isdigit(flag[i]))
+		{
+			put_zero(flag, ar);
+			return ;
+		}
+		else if (flag[i] == '-')
+		{
+			put_minus(flag, ar);
+			return ;
 		}
 	}
-	return (len);
 }
 
-int p_flags_b1(va_list arg, char *fmt)
+void	proc_flag(char *flag, t_f *ar)
 {
-	int		len;
-	char	mode;
+	int	i;
 
-	len = 0;
-	mode = 's';
-	if (*fmt == '#')
+	i = 0;
+	while (++i < ar->flen)
 	{
-		fmt++;
-		if (*fmt == 'x' || *fmt == 'X')
-		{
-			if (*fmt == 'X')
-				mode = 'S';
-			len += ft_nbr_sharp(arg, 16, mode);
-		}
-	}
-	else if(*fmt == '+')
-	{
-		mode = 'p';
-		len += ft_put_di(arg, mode);
-	}
-	else
-		len += p_flags_b2(&fmt);
-	return (len);
-}
-
-int	p_flags(va_list arg, char *fmt)
-{
-	int		len;
-
-	len = 0;
-	if (*fmt == 'c')
-		len += print_c(arg);
-	else if (*fmt == 's')
-		len += print_str(arg);
-	else if (*fmt == 'p')
-		len += ft_putnbr_base(arg, 16, 'p');
-	else if (*fmt == 'd' || *fmt == 'i')
-		len += ft_put_di(arg, 'd');
-	else if (*fmt == 'u')
-		len += ft_putnbr_base(arg, 10, 'u');
-	else if (*fmt == 'x')
-		len += ft_putnbr_base(arg, 16, 'x');
-	else if (*fmt == 'X')
-		len += ft_putnbr_base(arg, 16, 'X');
-	else if (*fmt == '%')
-	{
-		write(1, "%", 1);
-		len++;
-	}
-	else
-		len += p_flags_b1(arg, fmt);
-	return (len);
-}
-
-int	check_flags(va_list arg, char *fmt)
-{
-	int		len;
-
-	len = 0;
-	while (*fmt)
-	{
-		if (*fmt == '%' || *fmt == '+')
-		{
-			fmt++;
-			len += p_flags(arg, fmt);
-			if (*fmt == '#' || *fmt == '+')
-				fmt++;
-			else if (*fmt == ' ')
-			{
-				fmt++;
-				while (ft_isdigit(*fmt))
-					fmt++;
-				len += p_flags(arg, fmt);
-			}
-		}
+		if (flag[i] == 'd' || flag[i] == 'i')
+			ft_putnbr(va_arg(ar->arg, int), ar);
+		else if (flag[i] == 'c')
+			ft_putchar(va_arg(ar->arg, int), ar);
+		else if (flag[i] == 's')
+			ft_putstr(va_arg(ar->arg, char *), ar);
+		else if (flag[i] == 'p')
+			put_base(va_arg(ar->arg, size_t), ar, 16, 'p');
+		else if (flag[i] == 'u')
+			put_base(va_arg(ar->arg, size_t), ar, 10, 'u');
+		else if (flag[i] == 'x')
+			put_base(va_arg(ar->arg, size_t), ar, 16, 'x');
+		else if (flag[i] == 'X')
+			put_base(va_arg(ar->arg, size_t), ar, 16, 'X');
 		else
 		{
-			write(1, &(*fmt), 1);
-			len++;
+			proc_bonus(flag, ar);
+			return ;
 		}
-		fmt++;
 	}
-	return (len);
 }
 
-int	ft_printf(const char *fmt, ...)
+void	get_flag(char *fmt, t_f *ar)
 {
-	va_list	arg;
-	int		len;
-	char	*format;
+	char	*flag;
+	int		i;
 
-	format = (char *)fmt;
-	va_start(arg, fmt);
-	len = check_flags(arg, format);
-	va_end(arg);
-	// printf("\n==%d==\n", len);
+	flag = (char *)malloc(sizeof(char) * (ar->flen + 1));
+	if (!flag)
+		return ;
+	i = 0;
+	while (i < ar->flen)
+	{
+		flag[i] = fmt[i];
+		i++;
+	}
+	flag[i] = '\0';
+	proc_flag(flag, ar);
+	free(flag);
+}
+
+void	check_flags(t_f *ar, char *fmt)
+{
+	if (*(fmt + 1) == '%')
+	{
+		write(1, "%", 1);
+		ar->flen = 2;
+		ar->len++;
+	}
+	else
+	{
+		ar->flen = flag_len(fmt);
+		get_flag(fmt, ar);
+	}
+}
+
+int	ft_printf(const char *format, ...)
+{
+	t_f		*ar;
+	char	*fmt;
+	int		len;
+
+	fmt = (char *)format;
+	ar = (t_f *)malloc(sizeof(t_f));
+	if (!ar)
+		return (-1);
+	ar = init_s(ar);
+	va_start(ar->arg, format);
+	while (*fmt)
+	{
+		if (*fmt != '%')
+			put_nonf(ar, *fmt);
+		else
+			check_flags(ar, fmt);
+		fmt = fmt + ar->flen;
+	}
+	va_end(ar->arg);
+	len = ar->len;
+	free(ar);
 	return (len);
 }
