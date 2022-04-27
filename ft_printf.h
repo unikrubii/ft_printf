@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/24 18:14:23 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/27 17:50:53 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int				ft_isdigit(int c);
 int				ft_strlen(char *s);
 int				count_digit_int(long n);
 unsigned int	count_digit_u(size_t n, size_t base, unsigned int len);
+void			get_flag(char *fmt, t_f *ar);
 void			proc_bonus(char *flag, t_f *ar);
 void			proc_flag(char *flag, t_f *ar);
 void			put_nonf(t_f *ar, char c);
@@ -56,5 +57,6 @@ void			z_unsigned(unsigned int width, char spec, t_f *ar, char sp_c);
 void			z_pointer(size_t width, t_f *ar, char sp_c);
 void			z_str(int width, t_f *ar, char sp_c);
 void			recur_base(size_t n, t_f *ar, size_t base, char mode);
+char			*ft_strchr(const char *s, int c);
 
 #endif
