@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:43:10 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/27 17:57:13 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/28 23:43:28 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	proc_bonus2(char *flag, t_f *ar)
 	int	i;
 
 	i = 1;
-	if (flag[i] == '-')
+	if (flag[i] == '-' && !ft_strchr(flag, '.'))
 	{
 		put_minus(flag, ar);
 		return ;
@@ -38,7 +38,7 @@ void	proc_bonus2(char *flag, t_f *ar)
 	else
 	{
 		if (ft_strchr(flag, '.'))
-			printf("prec\n");
+			ft_print_prec(flag, ar);
 	}
 }
 
@@ -58,7 +58,7 @@ void	proc_bonus(char *flag, t_f *ar)
 			put_space(flag, ar, ' ');
 			return ;
 		}
-		else if (ft_isdigit(flag[i]))
+		else if (ft_isdigit(flag[i]) && !ft_strchr(flag, '.'))
 		{
 			put_zero(flag, ar);
 			return ;

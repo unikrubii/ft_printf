@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 15:11:48 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/24 18:59:38 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/28 18:17:40 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	put_zero(char *flag, t_f *ar)
 	char	spec;
 
 	spec = flag[ft_strlen(flag) - 1];
-	if (flag[1] == '0')
+	if (flag[1] == '0' && flag[ft_strlen(flag) - 1] != 's')
 		sp_c = '0';
 	else
 		sp_c = ' ';
