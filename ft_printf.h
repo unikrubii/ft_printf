@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/29 15:18:54 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/30 01:05:17 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void			z_int(int width, t_f *ar, char sp_c);
 void			z_unsigned(unsigned int width, char spec, t_f *ar, char sp_c);
 void			z_pointer(size_t width, t_f *ar, char sp_c);
 void			z_str(int width, t_f *ar, char sp_c);
+void			z_char(int width, t_f *ar, char sp_c);
+void			z_put_space(t_f *ar, char sp_c, int digit);
 void			ft_print_prec(char *flag, t_f *ar);
 void			recur_base(size_t n, t_f *ar, size_t base, char mode);
 void			put_pstr(char *str, t_f *ar);

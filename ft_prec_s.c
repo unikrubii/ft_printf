@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 22:30:09 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/29 01:42:36 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/30 01:22:03 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ void	put_pstr(char *str, t_f *ar)
 {
 	int		i;
 
+	i = 0;
 	if (!str)
 	{
-		if (ar->p_l > 5)
-			ft_putstr("(null)", ar);
+		while (i < ar->p_l && i < 6)
+		{
+			ft_putchar("(null)"[i], ar);
+			i++;
+		}
 		return ;
 	}
-	i = 0;
 	while (*str && i < ar->p_l)
 	{
 		ft_putchar(*str, ar);

@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 10:39:02 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/29 16:19:09 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/30 01:30:47 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,31 +59,12 @@ void	prec_bxn(t_f *ar, unsigned int n, int len, char spec)
 void	prec_bx(t_f *ar, unsigned int n, char mode, char spec)
 {
 	int	len;
-	// int	i;
-
-	// i = 0;
+	
 	len = count_digit_u(n, 16, 0);
-	// printf("%d\n", len);
-	// 2 8 5
-	// printf("%c\n", spec);
 	if (mode == 'm')
-	{
-		// while (i < ar->p_l - len)
-		// {
-		// 	ft_putchar('0', ar);
-		// 	i++;
-		// }
-		// recur_base(n, ar, 16, spec);
 		prec_bxm(ar, n, len, spec);
-	}
 	if (mode == 'n')
 		prec_bxn(ar, n, len, spec);
-	// 0 2 8 5 --> 3
-	// while (len + i < ar->p_w)
-	// {
-	// 	ft_putchar(' ', ar);
-	// 	len++;
-	// }
 }
 
 void	prec_base(t_f *ar, char mode, char spec)
@@ -91,6 +72,8 @@ void	prec_base(t_f *ar, char mode, char spec)
 	size_t	n;
 
 	n = (size_t)va_arg(ar->arg, size_t);
+	if (ar->p_l == 0 && n == 0)
+		return ;
 	if (spec == 'p')
 		printf("hello\n");
 	else
