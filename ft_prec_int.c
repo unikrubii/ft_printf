@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:00:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/29 02:09:31 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/29 11:05:27 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	prec_u(t_f *ar, char mode)
 	int	len;
 	
 	n = (unsigned int)va_arg(ar->arg, unsigned int);
-	len = count_digit_int(n);
+	len = count_digit_u(n, 10, 0);
 	if (mode == 'm')
 		put_nbr_m(n, ar, len);
 	if (mode == 'n')

@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:41:38 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/29 02:08:32 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/29 16:18:57 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	check_prec(char spec, t_f *ar, char mode)
 		prec_d(ar, mode);
 	else if (spec == 'u')
 		prec_u(ar, mode);
+	else if (spec == 'x' || spec == 'X')
+		prec_base(ar, mode, spec);
 }
 
 void	ft_print_prec(char *flag, t_f *ar)

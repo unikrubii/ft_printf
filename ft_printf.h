@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/29 02:08:47 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/29 15:18:54 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ void			prec_d(t_f *ar, char mode);
 void			prec_u(t_f *ar, char mode);
 void			put_nbr_m(long n, t_f *ar, int len);
 void			put_nbr_n(long n, t_f *ar, int len);
+void			prec_base(t_f *ar, char mode, char spec);
+void			prec_bx(t_f *ar, unsigned int n, char mode, char spec);
+void			prec_bxm(t_f *ar, unsigned int n, int len, char spec);
 char			*ft_strchr(const char *s, int c);
 char			**ft_split(char const *s, char c);
 
