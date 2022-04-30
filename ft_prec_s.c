@@ -6,13 +6,13 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 22:30:09 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 01:22:03 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/30 14:06:50 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	put_pstr(char *str, t_f *ar)
+int	put_pstr(char *str, t_f *ar)
 {
 	int		i;
 
@@ -24,7 +24,7 @@ void	put_pstr(char *str, t_f *ar)
 			ft_putchar("(null)"[i], ar);
 			i++;
 		}
-		return ;
+		return (0);
 	}
 	while (*str && i < ar->p_l)
 	{
@@ -32,6 +32,7 @@ void	put_pstr(char *str, t_f *ar)
 		str++;
 		i++;
 	}
+	return (i);
 }
 
 void	prec_s(t_f *ar, char mode)
@@ -44,8 +45,8 @@ void	prec_s(t_f *ar, char mode)
 	if (!str && ar->p_l > 5)
 		len = 6;
 	if (mode == 'm')
-		put_pstr(str, ar);
-	while (len - ar->p_w + ar->p_l < ar->p_w - 1)
+		len = put_pstr(str, ar);
+	while (len < ar->p_w)
 	{
 		ft_putchar(' ', ar);
 		len++;

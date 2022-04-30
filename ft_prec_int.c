@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:00:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 01:28:29 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/30 17:21:30 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,15 @@ void	put_nbr_n(long n, t_f *ar, int len)
 {
 	int	i;
 
-	if (len > ar->p_l)
-		i = ar->p_l;
+	if (len >= ar->p_l)
+		i = 0;
 	else
 		i = ar->p_l - len;
 	if (n < 0)
-		i++;
+	{
+		if (len < ar->p_l)
+			i++;
+	}
 	while (i + len < ar->p_w)
 	{
 		ft_putchar(' ', ar);
@@ -68,12 +71,27 @@ void	prec_u(t_f *ar, char mode)
 	
 	n = (unsigned int)va_arg(ar->arg, unsigned int);
 	if (ar->p_l == 0 && n == 0)
+	{
+		put_nbr_e(ar);
 		return ;
+	}
 	len = count_digit_u(n, 10, 0);
 	if (mode == 'm')
 		put_nbr_m(n, ar, len);
-	if (mode == 'n')
+	else if (mode == 'n')
 		put_nbr_n(n, ar, len);
+}
+
+void	put_nbr_e(t_f *ar)
+{
+	int	i;
+
+	i = 0;
+	while (i < ar->p_w)
+	{
+		ft_putchar(' ', ar);
+		i++;
+	}
 }
 
 void	prec_d(t_f *ar, char mode)
@@ -83,10 +101,13 @@ void	prec_d(t_f *ar, char mode)
 	
 	n = (int)va_arg(ar->arg, int);
 	if (ar->p_l == 0 && n == 0)
+	{
+		put_nbr_e(ar);
 		return ;
+	}
 	len = count_digit_int(n);
 	if (mode == 'm')
 		put_nbr_m(n, ar, len);
-	if (mode == 'n')
+	else if (mode == 'n')
 		put_nbr_n(n, ar, len);
 }

@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 01:05:17 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/30 17:24:23 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,17 @@ void			z_char(int width, t_f *ar, char sp_c);
 void			z_put_space(t_f *ar, char sp_c, int digit);
 void			ft_print_prec(char *flag, t_f *ar);
 void			recur_base(size_t n, t_f *ar, size_t base, char mode);
-void			put_pstr(char *str, t_f *ar);
+int				put_pstr(char *str, t_f *ar);
 void			prec_s(t_f *ar, char mode);
 void			prec_d(t_f *ar, char mode);
 void			prec_u(t_f *ar, char mode);
 void			put_nbr_m(long n, t_f *ar, int len);
 void			put_nbr_n(long n, t_f *ar, int len);
+void			put_nbr_e(t_f *ar);
 void			prec_base(t_f *ar, char mode, char spec);
 void			prec_bx(t_f *ar, unsigned int n, char mode, char spec);
 void			prec_bxm(t_f *ar, unsigned int n, int len, char spec);
+void			star_handle(char *flag, t_f *ar);
 char			*ft_strchr(const char *s, int c);
 char			**ft_split(char const *s, char c);
 

@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:38:18 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/24 18:59:01 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/04/30 10:48:17 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,9 +105,13 @@ void	minus_t(unsigned int width, char spec, t_f *ar)
 void	put_minus(char *flag, t_f *ar)
 {
 	int		width;
+	int		i;
 	char	spec;
 
-	width = ft_atoi(&flag[2]);
+	i = 1;
+	while (flag[i] == '-')
+		i++;
+	width = ft_atoi(&flag[i]);
 	spec = flag[ft_strlen(flag) - 1];
 	if (spec == 'c' || spec == 'u')
 		minus_u(width, spec, ar);
