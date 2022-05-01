@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:00:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 17:21:30 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/01 14:42:53 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	prec_u(t_f *ar, char mode)
 		put_nbr_e(ar);
 		return ;
 	}
-	len = count_digit_u(n, 10, 0);
+	len = d_u(n, 10, 0);
 	if (mode == 'm')
 		put_nbr_m(n, ar, len);
 	else if (mode == 'n')
@@ -105,7 +105,7 @@ void	prec_d(t_f *ar, char mode)
 		put_nbr_e(ar);
 		return ;
 	}
-	len = count_digit_int(n);
+	len = d_int(n);
 	if (mode == 'm')
 		put_nbr_m(n, ar, len);
 	else if (mode == 'n')

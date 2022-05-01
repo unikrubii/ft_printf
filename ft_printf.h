@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 17:24:23 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/01 16:00:00 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,21 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct s_f
+typedef struct	s_f
 {
 	va_list	arg;
 	int		len;
 	int		flen;
 	int		p_w;
 	int		p_l;
-}	t_f;
+	int		star1;
+	int		star2;
+	char	*st_v1;
+	char	*st_v2;
+	char	s_f;
+	char	s_w;
+	char	s_l;
+}				t_f;
 
 t_f				*init_s(t_f *ar);
 int				ft_printf(const char *format, ...);
@@ -33,9 +40,9 @@ int				flag_len(char *fmt);
 int				ft_atoi(char *s);
 int				ft_isdigit(int c);
 int				ft_strlen(char *s);
-int				count_digit_int(long n);
+int				d_int(long n);
 int				dot_pos(char *flag);
-unsigned int	count_digit_u(size_t n, size_t base, unsigned int len);
+unsigned int	d_u(size_t n, size_t base, unsigned int len);
 void			get_flag(char *fmt, t_f *ar);
 void			proc_bonus(char *flag, t_f *ar);
 void			proc_flag(char *flag, t_f *ar);
@@ -73,8 +80,12 @@ void			put_nbr_e(t_f *ar);
 void			prec_base(t_f *ar, char mode, char spec);
 void			prec_bx(t_f *ar, unsigned int n, char mode, char spec);
 void			prec_bxm(t_f *ar, unsigned int n, int len, char spec);
-void			star_handle(char *flag, t_f *ar);
+char			*star_handle(char *flag, t_f *ar);
+char			*star_handle_p(char *flag, t_f *ar);
+char			*star_new_flag(char *flag, char *new_flag, t_f *ar, int len);
 char			*ft_strchr(const char *s, int c);
+char			*ft_itoa(int n);
 char			**ft_split(char const *s, char c);
+size_t			ft_strlcpy(char *dst, char *src, size_t dstsize);
 
 #endif

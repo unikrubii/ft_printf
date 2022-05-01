@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 19:56:12 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 17:12:56 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/01 15:42:22 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ int	main(void)
 	char	*t = "0x12345678";
 	char	*u = "-0";
 
-	// ft_printf("%*i, %*d, %*d, %*d, %*d, %*d, %*d, %*d", a, i, a, j, a, k, a, l, a, m, a, c, a, e, a, d);
-	ft_printf("%*i", a, i);
+	// ft_printf("%0*i, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d", a, i, a, j, a, k, a, l, a, m, a, c, a, e, a, d);
+	// printf("\n");
+	// printf("%0*i, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d", a, i, a, j, a, k, a, l, a, m, a, c, a, e, a, d);
+	ft_printf("%---0000--*i", a, i);
+	// printf("%1.0d", l);
 }

@@ -6,30 +6,30 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 01:01:47 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 17:24:51 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/01 02:35:41 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	count_digit_int(long n)
+int	d_int(long n)
 {
 	if (n < 0)
 	{
 		if (n > -10)
-			return (1 + count_digit_int(-n / 10));
+			return (1 + d_int(-n / 10));
 		else
-			return (2 + count_digit_int(-n / 10));
+			return (2 + d_int(-n / 10));
 	}
 	if (n >= 10)
-		return (1 + count_digit_int(n / 10));
+		return (1 + d_int(n / 10));
 	return (1);
 }
 
-unsigned int	count_digit_u(size_t n, size_t base, unsigned int len)
+unsigned int	d_u(size_t n, size_t base, unsigned int len)
 {
 	if (n >= base)
-		len = count_digit_u(n / base, base, len);
+		len = d_u(n / base, base, len);
 	return (1 + len);
 }
 

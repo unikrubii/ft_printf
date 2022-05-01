@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:01:03 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 17:32:03 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/01 15:32:30 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,14 @@ void	get_flag(char *fmt, t_f *ar)
 	}
 	flag[i] = '\0';
 	if (ft_strchr(flag, '*'))
-		star_handle(flag, ar);
+	{
+		if (ft_strchr(flag, '.'))
+			// printf("hello\n");
+			flag = star_handle_p(flag, ar);
+		else
+			flag = star_handle(flag, ar);
+	}
+	// printf("%s\n", flag);
 	proc_flag(flag, ar);
 	free(flag);
 }

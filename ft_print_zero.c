@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 15:11:48 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 01:04:56 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/01 02:35:41 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	z_unsigned(unsigned int width, char spec, t_f *ar, char sp_c)
 
 	num = (unsigned int)va_arg(ar->arg, unsigned int);
 	if (spec == 'u')
-		digit = count_digit_u(num, 10, 0);
+		digit = d_u(num, 10, 0);
 	else
-		digit = count_digit_u(num, 16, 0);
+		digit = d_u(num, 16, 0);
 	if (width > digit)
 		digit = width - digit;
 	else

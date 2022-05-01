@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:18:53 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/28 21:22:00 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/01 15:23:59 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ t_f	*init_s(t_f *ar)
 	ar->flen = 0;
 	ar->p_l = 0;
 	ar->p_w = 0;
+	ar->star1 = 0;
+	ar->star2 = 0;
 	return (ar);
 }
 
@@ -71,6 +73,8 @@ int	ft_atoi(char *s)
 			minus *= -1;
 		s++;
 	}
+	while (*s == '-')
+		s++;
 	while (*s >= '0' && *s <= '9')
 	{
 		res = res * 10 + (*s - '0');

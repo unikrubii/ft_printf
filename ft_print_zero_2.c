@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 15:11:48 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 01:05:28 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/01 02:35:19 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	z_int(int width, t_f *ar, char sp_c)
 	int		digit;
 
 	num = (long)va_arg(ar->arg, int);
-	digit = count_digit_int(num);
+	digit = d_int(num);
 	if (width > digit)
 		digit = width - digit;
 	else

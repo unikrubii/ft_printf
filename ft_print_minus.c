@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:38:18 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 10:48:17 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/01 02:35:41 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	minus_i(int width, t_f *ar)
 
 	var_i = (int)va_arg(ar->arg, int);
 	ft_putnbr(var_i, ar);
-	len = count_digit_int(var_i);
+	len = d_int(var_i);
 	if (width > len)
 		width -= len;
 	else
@@ -45,7 +45,7 @@ void	minus_u(unsigned int width, char spec, t_f *ar)
 	else
 	{
 		ft_putnbr(var_u, ar);
-		len = count_digit_int(var_u);
+		len = d_int(var_u);
 	}
 	if (width > len)
 		width -= len;
@@ -87,9 +87,9 @@ void	minus_t(unsigned int width, char spec, t_f *ar)
 
 	var_t = (size_t)va_arg(ar->arg, size_t);
 	if (spec == 'p')
-		len = count_digit_u(var_t, 16, 0) + 2;
+		len = d_u(var_t, 16, 0) + 2;
 	else
-		len = count_digit_u((unsigned int)var_t, 16, 0);
+		len = d_u((unsigned int)var_t, 16, 0);
 	put_base(var_t, ar, 16, spec);
 	if (width > len)
 		width -= len;
