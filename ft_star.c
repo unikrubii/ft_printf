@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 17:15:48 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/02 16:43:33 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/02 17:12:04 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,7 @@ void	cx_arg(char *flag, t_f *ar)
 {
 	int	tmp;
 
+	tmp = 0;
 	if (cnt_star(flag) == 1)
 	{
 		if (cx_f(flag, '.'))
