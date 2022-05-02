@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/01 16:00:00 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/02 16:28:18 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ typedef struct	s_f
 	int		p_l;
 	int		star1;
 	int		star2;
+	int		star_l;
 	char	*st_v1;
 	char	*st_v2;
-	char	s_f;
+	char	s_fl;
 	char	s_w;
 	char	s_l;
 }				t_f;
@@ -80,9 +81,10 @@ void			put_nbr_e(t_f *ar);
 void			prec_base(t_f *ar, char mode, char spec);
 void			prec_bx(t_f *ar, unsigned int n, char mode, char spec);
 void			prec_bxm(t_f *ar, unsigned int n, int len, char spec);
-char			*star_handle(char *flag, t_f *ar);
-char			*star_handle_p(char *flag, t_f *ar);
-char			*star_new_flag(char *flag, char *new_flag, t_f *ar, int len);
+char			*parse_star(char *flag, t_f *ar);
+// char			*star_handle(char *flag, t_f *ar);
+// char			*star_handle_p(char *flag, t_f *ar);
+// char			*star_new_flag(char *flag, char *new_flag, t_f *ar, int len);
 char			*ft_strchr(const char *s, int c);
 char			*ft_itoa(int n);
 char			**ft_split(char const *s, char c);
