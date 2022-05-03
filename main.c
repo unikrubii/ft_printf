@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 19:56:12 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/04 00:02:53 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/04 00:18:31 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ int	main(void)
 	char	*t = "0x12345678";
 	char	*u = "-0";
 
-	a = 12;
-	b = 18;
-	// ft_printf("%-8.12s|", NULL);
-	// printf("\n");
-	// printf("%-8.12s|", NULL);
+	a = 0;
+	b = 5;
+	ft_printf("%.*x|", l);
+	printf("\n");
+	printf("%.*x|", l);
 	// printf("\n");
 	// printf("%-2.0s|", n);
-	int len_a = ft_printf("%-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
-	printf("\n");
-	int	len_b = printf("%-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
-	printf("\n");
-	printf("\n");
-	printf("%d\t%d\n", len_a, len_b);
+	// int len_a = ft_printf("%.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X", a, i, a, i, a, i, a, j, a, j, a, j, a, k, a, k, a, k, a, l, a, l, a, l, a, m, a, m, a, m, a, c, a, c, a, c, a, d, a, d, a, d, a, e, a, e, a, e);
+	// printf("\n");
+	// int	len_b = printf("%.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X", a, i, a, i, a, i, a, j, a, j, a, j, a, k, a, k, a, k, a, l, a, l, a, l, a, m, a, m, a, m, a, c, a, c, a, c, a, d, a, d, a, d, a, e, a, e, a, e);
+	// printf("\n");
+	// printf("\n");
+	// printf("%d\t%d\n", len_a, len_b);
 }
 
 
