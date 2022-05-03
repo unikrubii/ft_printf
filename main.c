@@ -5,12 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 19:56:12 by sthitiku          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/04 00:18:31 by sthitiku         ###   ########.fr       */
-=======
-/*   Updated: 2022/05/04 00:16:18 by sthitiku         ###   ########.fr       */
->>>>>>> 2e5194f0c93609511f4128f3697d736d2d9752fc
+/*   Created: 2022/05/04 00:24:34 by sthitiku          #+#    #+#             */
+/*   Updated: 2022/05/04 00:25:48 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +40,9 @@ int	main(void)
 
 	a = 0;
 	b = 5;
-	ft_printf("%.*x|", l);
+	ft_printf("%.*x|", a, l);
 	printf("\n");
-	printf("%.*x|", l);
+	printf("%.*x|", a, l);
 	// printf("\n");
 	// printf("%-2.0s|", n);
 	// int len_a = ft_printf("%.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X, %.*u, %.*x, %.*X", a, i, a, i, a, i, a, j, a, j, a, j, a, k, a, k, a, k, a, l, a, l, a, l, a, m, a, m, a, m, a, c, a, c, a, c, a, d, a, d, a, d, a, e, a, e, a, e);
