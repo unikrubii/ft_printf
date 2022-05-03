@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:01:03 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/03 00:00:27 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/03 23:36:54 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	get_flag(char *fmt, t_f *ar)
 	if (ft_strchr(flag, '*'))
 	{
 		flag = parse_star(flag, ar);
-		free(ar->st_v1);
+		if (ar->st_v1)
+			free(ar->st_v1);
 		if (ar->st_v2)
 			free(ar->st_v2);
 	}

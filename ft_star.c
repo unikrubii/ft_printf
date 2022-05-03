@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 17:15:48 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/03 00:00:14 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/03 23:29:37 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,12 @@ void	one_star(char *flag, t_f *ar)
 		if (ar->star1 < 0)
 			ar->star1 *= -1;
 		ar->st_v1 = ft_itoa(ar->star1);
-		ar->star2 = (unsigned int)va_arg(ar->arg, unsigned int);
+		ar->star2 = (int)va_arg(ar->arg, int);
+		ar->tmp2 = ar->star2;
+		if (ar->star2 < 0)
+			ar->star2 = 1;
+		if (ar->star1 == 0 && ar->tmp2 < 0)
+			ar->star2 = -1;
 		ar->st_v2 = ft_itoa(ar->star2);
 	}
 	else
@@ -79,6 +84,7 @@ void	cx_arg(char *flag, t_f *ar)
 				ar->star1 *= -1;
 			ar->st_v1 = ft_itoa(ar->star1);
 		}
+		ar->star_l = d_int(ar->star1) + d_int(ar->star2);
 	}
 	else
 	{
@@ -87,10 +93,22 @@ void	cx_arg(char *flag, t_f *ar)
 		if (ar->star1 < 0)
 			ar->star1 *= -1;
 		ar->st_v1 = ft_itoa(ar->star1);
-		ar->star2 = (unsigned int)va_arg(ar->arg, unsigned int);
+		ar->star2 = (int)va_arg(ar->arg, int);
+		ar->tmp2 = ar->star2;
+		if ((ar->tmp <= 1 || ar->star2 < ar->tmp) && ar->star2 < 0)
+			ar->star2 = 1;
+		else if (ar->star2 < -1 && cx_f(flag, '0'))
+			ar->star2 *= -1;
 		ar->st_v2 = ft_itoa(ar->star2);
+		ar->star_l = d_int(ar->star1) + d_int(ar->star2);
+		if ((ar->tmp > 1 && ar->tmp2 < 0))
+		{
+			ar->star2 = -1;
+			return ;
+		}
+		if (ar->tmp2 < 0 && flag[ft_strlen(flag) - 1] == 's')
+			ar->star2 = -1;
 	}
-	ar->star_l = d_int(ar->star1) + d_int(ar->star2);
 }
 
 char	*parse_star(char *flag, t_f *ar)
@@ -110,14 +128,14 @@ char	*parse_star(char *flag, t_f *ar)
 		new_flag[i++] = '0';
 	ft_strlcpy(&new_flag[i], ar->st_v1, d_int(ar->tmp) + 1);
 	i += ft_strlen(ar->st_v1);
-	if (cx_f(flag, '.'))
+	if (cx_f(flag, '.') && ar->star2 != -1)
 	{
 		new_flag[i++] = '.';
 		ft_strlcpy(&new_flag[i], ar->st_v2, ft_strlen(ar->st_v2) + 1);
-		i += ft_strlen(ar->st_v1);
+		i += ft_strlen(ar->st_v2);
 	}
-	// printf("%c\n", flag[ft_strlen(flag) - 1]);
-	new_flag[i] = flag[ft_strlen(flag) - 1];
+	new_flag[i++] = flag[ft_strlen(flag) - 1];
+	new_flag[i] = '\0';
 	free(flag);
 	return (new_flag);
 }

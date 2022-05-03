@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 19:56:12 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/01 15:42:22 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/03 23:36:43 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,23 @@ int	main(void)
 	char	*t = "0x12345678";
 	char	*u = "-0";
 
-	// ft_printf("%0*i, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d", a, i, a, j, a, k, a, l, a, m, a, c, a, e, a, d);
+	a = 12;
+	b = 18;
+	ft_printf("%-2.4s|", NULL);
+	printf("\n");
+	printf("%-2.4s|", NULL);
 	// printf("\n");
-	// printf("%0*i, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d, %0*d", a, i, a, j, a, k, a, l, a, m, a, c, a, e, a, d);
-	ft_printf("%---0000--*i", a, i);
-	// printf("%1.0d", l);
+	// printf("%-2.0s|", n);
+	// int len_a = ft_printf("%-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
+	// printf("\n");
+	// int	len_b = printf("%-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
+	// printf("\n");
+	// printf("\n");
+	// printf("%d\t%d\n", len_a, len_b);
 }
+
+
+// %00.-2i --> %00.1i
+// %02.-2i --> %02i
+// %02.-1i --> %02i
+// %0-2.2i --> %-02.2i

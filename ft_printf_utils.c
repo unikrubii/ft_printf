@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:18:53 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/02 23:53:44 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/03 19:47:25 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ t_f	*init_s(t_f *ar)
 	ar->star2 = 0;
 	ar->star_l = 0;
 	ar->tmp = 0;
+	ar->tmp2 = 0;
+	ar->st_v1 = NULL;
+	ar->st_v2 = NULL;
 	return (ar);
 }
 

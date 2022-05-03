@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/02 23:52:45 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/03 19:47:11 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct	s_f
 	int		star1;
 	int		star2;
 	int		tmp;
+	int		tmp2;
 	int		star_l;
 	char	*st_v1;
 	char	*st_v2;

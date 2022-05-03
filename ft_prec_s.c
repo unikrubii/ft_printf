@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 22:30:09 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/04/30 14:06:50 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/03 23:40:33 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	put_pstr(char *str, t_f *ar)
 	i = 0;
 	if (!str)
 	{
-		while (i < ar->p_l && i < 6)
-		{
-			ft_putchar("(null)"[i], ar);
-			i++;
-		}
+		// while (i < ar->p_l && i < 6)
+		// {
+		// 	ft_putchar("(null)"[i], ar);
+		// 	i++;
+		// }
 		return (0);
 	}
 	while (*str && i < ar->p_l)
@@ -44,13 +44,18 @@ void	prec_s(t_f *ar, char mode)
 	len = ft_strlen(str) + 1;
 	if (!str && ar->p_l > 5)
 		len = 6;
-	if (mode == 'm')
-		len = put_pstr(str, ar);
+	// printf("%c\n", mode);
+	// if (mode == 'm')
+	// 	len = put_pstr(str, ar);
+	if (ar->p_l <= ft_strlen(str))
+		len = ar->p_l;
+	else
+		len = ft_strlen(str);
 	while (len < ar->p_w)
 	{
 		ft_putchar(' ', ar);
 		len++;
 	}
-	if (mode == 'n')
-		put_pstr(str, ar);
+	// if (mode == 'n')
+	put_pstr(str, ar);
 }
