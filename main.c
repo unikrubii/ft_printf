@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 19:56:12 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/03 23:36:43 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/04 00:02:53 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ int	main(void)
 
 	a = 12;
 	b = 18;
-	ft_printf("%-2.4s|", NULL);
-	printf("\n");
-	printf("%-2.4s|", NULL);
+	// ft_printf("%-8.12s|", NULL);
+	// printf("\n");
+	// printf("%-8.12s|", NULL);
 	// printf("\n");
 	// printf("%-2.0s|", n);
-	// int len_a = ft_printf("%-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
-	// printf("\n");
-	// int	len_b = printf("%-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
-	// printf("\n");
-	// printf("\n");
-	// printf("%d\t%d\n", len_a, len_b);
+	int len_a = ft_printf("%-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
+	printf("\n");
+	int	len_b = printf("%-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
+	printf("\n");
+	printf("\n");
+	printf("%d\t%d\n", len_a, len_b);
 }
 
 
