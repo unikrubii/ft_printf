@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:00:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/03 22:29:43 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:03:44 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	prec_u(t_f *ar, char mode)
 {
 	unsigned int	n;
 	int	len;
-	
+
 	n = (unsigned int)va_arg(ar->arg, unsigned int);
 	if (ar->p_l == 0 && n == 0)
 	{
