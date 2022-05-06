@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 10:39:02 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/04 11:03:46 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/06 09:51:36 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,19 +65,14 @@ void	prec_bx(t_f *ar, unsigned int n, char mode, char spec)
 
 void	prec_base(t_f *ar, char mode, char spec)
 {
-	size_t	n;
+	unsigned int	n;
 
-	n = (size_t)va_arg(ar->arg, size_t);
+	n = (unsigned int)va_arg(ar->arg, unsigned int);
 	if (ar->p_l == 0 && n == 0)
 	{
 		put_nbr_e(ar);
 		return ;
 	}
-	if (spec == 'p')
-		printf("hello\n");
 	else
-	{
-		n = (unsigned int)n;
 		prec_bx(ar, n, mode, spec);
-	}
 }

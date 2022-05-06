@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:41:38 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/03 01:42:44 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/06 04:02:41 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_print_prec(char *flag, t_f *ar)
 	if (flag[i] != '-' && i != 1)
 		i--;
 	ar->p_w = ft_atoi(&prec[0][i]);
+	ar->tmp = ar->p_w;
 	ar->p_l = ft_atoi(prec[1]);
 	mode = 'n';
 	if (ar->p_w < 0)
