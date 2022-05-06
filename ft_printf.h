@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:19:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/03 19:47:11 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/06 14:33:35 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct	s_f
+typedef struct s_f
 {
 	va_list	arg;
 	int		len;
@@ -32,7 +32,7 @@ typedef struct	s_f
 	int		star_l;
 	char	*st_v1;
 	char	*st_v2;
-}				t_f;
+}	t_f;
 
 t_f				*init_s(t_f *ar);
 int				ft_printf(const char *format, ...);
@@ -42,6 +42,8 @@ int				ft_isdigit(int c);
 int				ft_strlen(char *s);
 int				d_int(long n);
 int				dot_pos(char *flag);
+int				cx_f(char *flag, char c);
+int				cnt_star(char *flag);
 unsigned int	d_u(size_t n, size_t base, unsigned int len);
 void			get_flag(char *fmt, t_f *ar);
 void			proc_bonus(char *flag, t_f *ar);
@@ -56,7 +58,7 @@ void			put_plus(int n, t_f *ar);
 void			put_space(char *flag, t_f *ar, char c);
 void			put_space_s(t_f *ar, int space, char c);
 void			put_space_int(t_f *ar, int space);
-void 			put_zero(char *flag, t_f *ar);
+void			put_zero(char *flag, t_f *ar);
 void			put_minus(char *fl, t_f *ar);
 void			minus_i(int width, t_f *ar);
 void			minus_t(unsigned int width, char spec, t_f *ar);
@@ -81,9 +83,6 @@ void			prec_base(t_f *ar, char mode, char spec);
 void			prec_bx(t_f *ar, unsigned int n, char mode, char spec);
 void			prec_bxm(t_f *ar, unsigned int n, int len, char spec);
 char			*parse_star(char *flag, t_f *ar);
-// char			*star_handle(char *flag, t_f *ar);
-// char			*star_handle_p(char *flag, t_f *ar);
-// char			*star_new_flag(char *flag, char *new_flag, t_f *ar, int len);
 char			*ft_strchr(const char *s, int c);
 char			*ft_itoa(int n);
 char			**ft_split(char const *s, char c);

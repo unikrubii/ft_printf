@@ -6,11 +6,38 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 22:30:09 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/06 04:19:23 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/06 14:28:54 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	cx_f(char *flag, char c)
+{
+	while (*flag)
+	{
+		if (*flag == c)
+			return (1);
+		flag++;
+	}
+	return (0);
+}
+
+int	cnt_star(char *flag)
+{
+	int	count;
+
+	count = 0;
+	while (*flag)
+	{
+		if (*flag == '*')
+		{
+			count++;
+		}
+		flag++;
+	}
+	return (count);
+}
 
 int	put_pstr(char *str, t_f *ar)
 {

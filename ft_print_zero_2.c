@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 15:11:48 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/04 10:27:08 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/06 14:09:56 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	z_put_space(t_f *ar, char sp_c, int digit)
 
 	i = 0;
 	while (i++ < digit)
-			ft_putchar(sp_c, ar);
+		ft_putchar(sp_c, ar);
 }
 
 void	z_int(int width, t_f *ar, char sp_c)
@@ -50,8 +50,8 @@ void	z_int(int width, t_f *ar, char sp_c)
 
 int	z_width(size_t base, size_t width)
 {
-	size_t len;
-	
+	size_t	len;
+
 	len = d_u(base, 16, 0);
 	if (!base)
 	{

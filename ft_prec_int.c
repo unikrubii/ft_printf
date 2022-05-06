@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:00:23 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/04 11:03:44 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/06 14:18:20 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,13 @@ void	put_nbr_n(long n, t_f *ar, int len)
 		i = 0;
 	else
 		i = ar->p_l - len;
-	// printf("iiii %d\tp_l %d\n", i, ar->p_l);
 	if (n < 0)
 	{
 		if (len <= ar->p_l)
 			i++;
 	}
-	// printf("i = %d\tlen = %d, p_w = %d\n", i, len, ar->p_w);
-	while (i + len < ar->p_w)
-	{
+	while ((i++) + len < ar->p_w)
 		ft_putchar(' ', ar);
-		i++;
-	}
 	i = -1;
 	if (n < 0)
 	{
@@ -69,7 +64,7 @@ void	put_nbr_n(long n, t_f *ar, int len)
 void	prec_u(t_f *ar, char mode)
 {
 	unsigned int	n;
-	int	len;
+	int				len;
 
 	n = (unsigned int)va_arg(ar->arg, unsigned int);
 	if (ar->p_l == 0 && n == 0)
@@ -100,7 +95,7 @@ void	prec_d(t_f *ar, char mode)
 {
 	int	n;
 	int	len;
-	
+
 	n = (int)va_arg(ar->arg, int);
 	if (ar->p_l == 0 && n == 0)
 	{

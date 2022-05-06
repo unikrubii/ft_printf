@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 21:01:03 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/06 04:04:17 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/06 14:10:07 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	get_flag(char *fmt, t_f *ar)
 		if (ar->st_v2)
 			free(ar->st_v2);
 	}
-	// printf("%s\n", flag);
 	proc_flag(flag, ar);
 	free(flag);
 }

@@ -6,7 +6,7 @@
 /*   By: sthitiku <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 10:39:02 by sthitiku          #+#    #+#             */
-/*   Updated: 2022/05/06 09:51:36 by sthitiku         ###   ########.fr       */
+/*   Updated: 2022/05/06 13:43:00 by sthitiku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	prec_bxn(t_f *ar, unsigned int n, int len, char spec)
 void	prec_bx(t_f *ar, unsigned int n, char mode, char spec)
 {
 	int	len;
-	
+
 	len = d_u(n, 16, 0);
 	if (mode == 'm')
 		prec_bxm(ar, n, len, spec);
