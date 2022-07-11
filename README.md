@@ -22,13 +22,13 @@
 > • %% Prints a percent sign.</br>
 
 ### **Bonus Part**
-> • # flag. Used with o, x or X specifiers the value is preceeded with 0, 0x or 0X respectively for values different than zero.
-> • " " (space) flag. If no sign is going to be written, a blank space is inserted before the value.
-> • + flag. Forces to preceed the result with a plus or minus sign (+ or -) even for positive numbers.
-> • 0 flag. Left-pads the number with zeroes (0) instead of spaces when padding is specified.
-> • - flag. Left-justify within the given field width.
-> • . flag. Make number and string to be precised with specified length and width.
-> Cr. Thanks to https://cplusplus.com/reference/cstdio/printf/
+> • # flag. Used with o, x or X specifiers the value is preceeded with 0, 0x or 0X respectively for values different than zero.</br>
+> • " " (space) flag. If no sign is going to be written, a blank space is inserted before the value.</br>
+> • + flag. Forces to preceed the result with a plus or minus sign (+ or -) even for positive numbers.</br>
+> • 0 flag. Left-pads the number with zeroes (0) instead of spaces when padding is specified.</br>
+> • - flag. Left-justify within the given field width.</br>
+> • . flag. Make number and string to be precised with specified length and width.</br>
+> Cr. Thanks to https://cplusplus.com/reference/cstdio/printf/</br>
 
 </br>
 
